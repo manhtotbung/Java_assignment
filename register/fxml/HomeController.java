@@ -147,6 +147,27 @@ public class HomeController implements Initializable {
         }
     }
 
+//    @FXML
+//    public void onClickDelete() {
+//        int selectedIndex = userListTV.getSelectionModel().getSelectedIndex();
+//        if (selectedIndex >= 0) {
+//            User selectedUser = userListTV.getItems().get(selectedIndex);
+//            int userId = selectedUser.getId();  // Lấy ID của người dùng
+//            boolean deleteResult = UserDAO.deleteUser(userId);  // Truyền ID vào phương thức deleteUser
+//
+//            if (deleteResult) {
+//                userListTV.getItems().remove(selectedIndex);
+//                System.out.println("Delete successful!");
+//                welcomeMsg.setText("Delete successful!");
+//            } else {
+//                System.out.println("Error deleting from database!");
+//                welcomeMsg.setText("Error deleting from database!");
+//            }
+//        } else {
+//            showAlert("No selection", "No User Selected", "Please select a user in the table.");
+//        }
+//    }
+
     @FXML
     public void onClickExit() {
         welcomeMsg.getScene().getWindow().hide();

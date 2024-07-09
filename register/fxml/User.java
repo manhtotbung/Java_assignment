@@ -1,6 +1,7 @@
 package register.fxml;
 
 public class User {
+	private int id;
 	private String email;
 	private String fullname;
 	private String imgPath;
@@ -11,6 +12,14 @@ public class User {
 		this.email = email;
 		this.fullname = fullname;
 	}
+//	    Các getter và setter cho id, email, fullname và imgPath
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
 	public String getEmail() {
 		return email;

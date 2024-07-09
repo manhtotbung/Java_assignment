@@ -146,11 +146,11 @@ public class UserDAO {
 	    try {
 	        Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	        Connection connection = DriverManager.getConnection(jdbcURL, jdbcUser, jdbcPass);
-	        String sql = "UPDATE tbluser SET email = ?, fullname = ? WHERE id = ?";
+	        String sql = "UPDATE tbluser SET email = ?, fullname = ? WHERE ID = ?";
 	        PreparedStatement statement = connection.prepareStatement(sql);
 	        statement.setString(1, user.getEmail());
 	        statement.setString(2, user.getFullname());
-	        statement.setInt(3, user.getId()); // Giả sử User có trường id
+//	        statement.setInt(3, user.getId()); // Giả sử User có trường id
 	        rowUpdated = statement.executeUpdate() > 0;
 	        statement.close();
 	        connection.close();
@@ -164,7 +164,7 @@ public class UserDAO {
 	    return rowUpdated;
 	}
 
-	public static boolean deleteUser(int userId) {
+	public static boolean deleteUser(int user) {
 	    String jdbcURL = "jdbc:ucanaccess://lib/QLNS.accdb";
 	    String jdbcUser = "";
 	    String jdbcPass = "";
@@ -172,9 +172,9 @@ public class UserDAO {
 	    try {
 	        Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 	        Connection connection = DriverManager.getConnection(jdbcURL, jdbcUser, jdbcPass);
-	        String sql = "DELETE FROM tbluser WHERE id = ?";
+	        String sql = "DELETE FROM tbluser WHERE ID = ?";
 	        PreparedStatement statement = connection.prepareStatement(sql);
-	        statement.setInt(1, userId);
+	        statement.setInt(1, user);
 	        rowDeleted = statement.executeUpdate() > 0;
 	        statement.close();
 	        connection.close();
